@@ -1,0 +1,25 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: var(--fonte-secundaria);
+}
+
+:root{
+  --cor-header: rgb(39, 37, 37);
+  --fonte-principal: "Poppins", sans-serif;
+  --fonte-secundaria: "Inter", sans-serif;
+  /* 
+    Título principal
+    font-weight: 700;
+
+    Subtítulo
+    font-weight: 600;
+
+    Texto
+    font-weight: 400;
+    line-height: 1.6;
+  */
+
+}
+
