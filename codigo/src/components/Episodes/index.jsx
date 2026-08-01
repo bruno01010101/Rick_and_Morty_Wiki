@@ -1,5 +1,5 @@
 export default function Episodes(){
     return(
-        <p>olha que maneiro</p>
+        <h1>Olha que top, esse aqui é o filho</h1>
     )
 }

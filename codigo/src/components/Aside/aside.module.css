@@ -1,0 +1,33 @@
+.aside{
+    max-width: 400px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: var(--cor-header);
+}
+
+.img{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.aside > p {
+    font-weight: 300;
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: rgba(248, 241, 241, 0.932);
+    font-family: var(--fonte-secundaria);
+}
+
+.links a{
+    color: #7C3AED;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.3em;
+    display: block;
+}
+
+.links > a:hover{
+    color: rgb(129, 5, 129);
+}
