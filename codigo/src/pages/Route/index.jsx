@@ -8,7 +8,6 @@ export default function Rotas(){
             <Routes>
                 <Route path='/' element={<Feed />}>
                     <Route path=''  element={<Episodes />} />
-                   
                 </Route>       
             </Routes>
        </BrowserRouter>

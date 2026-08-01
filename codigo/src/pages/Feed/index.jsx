@@ -6,7 +6,7 @@ export default function Feed() {
     return (
         <div className={styles.div}> 
             <Aside />
-            <main>
+            <main className={styles.main}>
                 <Outlet />
             </main>
         </div>
