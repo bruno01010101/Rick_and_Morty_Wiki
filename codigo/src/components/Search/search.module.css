@@ -1,0 +1,20 @@
+.search{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+    gap: 5px;
+    border: 2px solid var(--cor-header);
+    border-radius: 8px;
+}
+
+.search > input{
+    border: none;
+    width: 80%;
+    padding: 10px;
+}
+
+.search > input:focus{
+    border: none;
+    outline: none;
+}
