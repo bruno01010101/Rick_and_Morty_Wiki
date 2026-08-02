@@ -1,0 +1,30 @@
+.episodios{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 320px;
+    gap: 10px;
+}
+
+.card{
+    max-width: 300px;
+    border: 1px solid black;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.card > img{
+    width: 180px;
+    height: 200px;
+    margin: 0 auto;
+}
+.card > p {
+    font-family: var(--fonte-principal);
+    line-height: 1.4;
+    font-weight: 400;
+    font-size: 0.9em;
+    
+}
