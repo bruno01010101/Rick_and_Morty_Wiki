@@ -2,38 +2,49 @@ import styles from "./episodes.module.css";
 import img from "../../assets/capa.jpg";
 import Card from "../Card";
 import Search from "../Search";
+import axios from 'axios'
+import { useEffect, useState } from "react";
 
 export default function Episodes() {
+    const [episodios, setEpisodios] = useState([]);
+
+    async function requisicao(num) {
+        try {
+            const req = await axios.get(`https://rickandmortyapi.com/api/episode?page=${num}`);
+            setEpisodios(req.data.results)
+        }
+        catch (erro) {
+            console.error(erro);
+        }
+    }
+
+    useEffect(() => {
+        const funcAssincrona = async () => {
+            requisicao(1)
+        }
+
+        funcAssincrona()
+    }, [])
+
     return (
         <div className={styles.episodios}>
             <Search placeholder='Pesquise pelo título do episódio que você deseja encontrar' />
             <div className={styles.elementos}>
-                <Card texto='algumas informações bacanas sobre o episódio, vamos olha que bacana' h2='Titulo bem bacana'>
-                    <img src={img} alt="imagem de um episódio de rick and morty" />
-                </Card>
-                <Card texto='algumas informações bacanas sobre o episódio, vamos olha que bacana' h2='Titulo bem bacana'>
-                    <img src={img} alt="imagem de um episódio de rick and morty" />
-                </Card>
-                <Card texto='algumas informações bacanas sobre o episódio, vamos olha que bacana' h2='Titulo bem bacana'>
-                    <img src={img} alt="imagem de um episódio de rick and morty" />
-                </Card>
-                <Card texto='algumas informações bacanas sobre o episódio, vamos olha que bacana' h2='Titulo bem bacana'>
-                    <img src={img} alt="imagem de um episódio de rick and morty" />
-                </Card>
-                <Card texto='algumas informações bacanas sobre o episódio, vamos olha que bacana' h2='Titulo bem bacana'>
-                    <img src={img} alt="imagem de um episódio de rick and morty" />
-                </Card>
-                <Card texto='algumas informações bacanas sobre o episódio, vamos olha que bacana' h2='Titulo bem bacana'>
-                    <img src={img} alt="imagem de um episódio de rick and morty" />
-                </Card>
-                <Card texto='algumas informações bacanas sobre o episódio, vamos olha que bacana' h2='Titulo bem bacana'>
-                    <img src={img} alt="imagem de um episódio de rick and morty" />
-                </Card>
-                <Card texto='algumas informações bacanas sobre o episódio, vamos olha que bacana' h2='Titulo bem bacana'>
-                    <img src={img} alt="imagem de um episódio de rick and morty" />
-                </Card>
+                {
+                    episodios.map(((e) => (
+                        <>
+                            <Card texto={e.name} h2={e.episode} key={e.id}>
+                                <img src={img} alt="imagem de um episódio de rick and morty" />
+                            </Card>
+                        </>
+                    )))
+                }
             </div>
-          
+            <div className={styles.paginas}>
+                <button onClick={() => requisicao(1)}>1</button>
+                <button onClick={() => requisicao(2)}>2</button>
+                <button onClick={() => requisicao(3)}>3</button>
+            </div>
         </div>
     )
 }

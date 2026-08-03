@@ -12,3 +12,16 @@
     gap: 25px;
     align-items: center;
 }
+
+.paginas > button{
+    background-color: white;
+    border: 1px solid black;
+    padding: 5px;
+    cursor: pointer;
+    width: 35px;
+}
+
+.paginas > button:hover{
+    background-color: #06B6D4;
+    color: white;
+}
