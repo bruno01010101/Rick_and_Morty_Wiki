@@ -3,10 +3,12 @@ import img from "../../assets/capa.jpg";
 import Card from "../Card";
 import Search from "../Search";
 import axios from 'axios'
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
+import { useNavigate } from "react-router";
 
 export default function Episodes() {
     const [episodios, setEpisodios] = useState([]);
+    const navigate = useNavigate()
 
     async function requisicao(num) {
         try {
@@ -32,11 +34,9 @@ export default function Episodes() {
             <div className={styles.elementos}>
                 {
                     episodios.map(((e) => (
-                        <>
-                            <Card texto={e.name} h2={e.episode} key={e.id}>
-                                <img src={img} alt="imagem de um episódio de rick and morty" />
-                            </Card>
-                        </>
+                        <Card texto={e.name} h2={e.episode} key={e.id} onClick={() => navigate(`episode/${e.name}`)}>
+                            <img src={img} alt="imagem de um episódio de rick and morty" />
+                        </Card>
                     )))
                 }
             </div>
