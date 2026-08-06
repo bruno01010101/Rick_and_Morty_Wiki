@@ -7,8 +7,13 @@ import img from "../../assets/capa.jpg";
 export default function DetailsPage() {
 
     const [episodio, setEpisodio] = useState({});
+
+    const [lista1, setlista1] = useState([]);
+    const [lista2, setlista2] = useState([]);
+
+
     const { name } = useParams()
-    
+
 
     function formatarData(data) {
         return new Date(data).toLocaleDateString("pt-BR")
@@ -21,6 +26,21 @@ export default function DetailsPage() {
                 const url = `https://rickandmortyapi.com/api/episode?name=${name}`;
                 const req = await axios.get(url);
                 setEpisodio(req.data.results[0])
+
+                {
+                    req.data.results[0].characters.forEach((e, i) => {
+                        if (i <= 18) {
+                            if (i % 2 == 0) {
+                                setlista1((listaAnterior) => [...listaAnterior, e])
+                            } else {
+                                setlista2((listaAnterior) => [...listaAnterior, e])
+                            }
+                        }
+                        else{
+                            return
+                        }
+                    })
+                }
             }
             catch (erro) {
                 console.error(erro);
@@ -44,10 +64,18 @@ export default function DetailsPage() {
                 <p>Lista de personagens que aparecem: </p>
             </div>
             <ul className={styles.personagens}>
-                <li>teste</li>
+                {
+                    lista1.map(((e, i) => (
+                        <li key={i}>{e}</li>
+                    )))
+                }
             </ul>
             <ul className={styles.personagens}>
-                <li>teste 2</li>
+                {
+                    lista2.map(((e, i) => (
+                        <li key={i}>{e}</li>
+                    )))
+                }
             </ul>
         </div>
     )

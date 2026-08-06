@@ -16,7 +16,7 @@ export default function Aside() {
                     Lista de episódios
                 </Link>
 
-                <Link to='/'>
+                <Link to='/characters'>
                     Lista de personagens
                 </Link>
 

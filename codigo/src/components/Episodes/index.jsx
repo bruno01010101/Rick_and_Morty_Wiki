@@ -5,6 +5,7 @@ import Search from "../Search";
 import axios from 'axios'
 import { useEffect, useState} from "react";
 import { useNavigate } from "react-router";
+import Elements from "../Elements";
 
 export default function Episodes() {
     const [episodios, setEpisodios] = useState([]);
@@ -31,7 +32,7 @@ export default function Episodes() {
     return (
         <div className={styles.episodios}>
             <Search placeholder='Pesquise pelo título do episódio que você deseja encontrar' />
-            <div className={styles.elementos}>
+            <Elements>
                 {
                     episodios.map(((e) => (
                         <Card texto={e.name} h2={e.episode} key={e.id} onClick={() => navigate(`episode/${e.name}`)}>
@@ -39,7 +40,7 @@ export default function Episodes() {
                         </Card>
                     )))
                 }
-            </div>
+            </Elements>
             <div className={styles.paginas}>
                 <button onClick={() => requisicao(1)}>1</button>
                 <button onClick={() => requisicao(2)}>2</button>

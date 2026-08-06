@@ -1,0 +1,7 @@
+.elements{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 320px;
+    gap: 2px;
+    background-color: var(--cor-header);
+}
