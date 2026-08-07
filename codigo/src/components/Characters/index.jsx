@@ -4,10 +4,11 @@ import axios from 'axios'
 import Card from "../Card";
 import { useEffect, useState } from 'react';
 import Elements from '../Elements';
-
+import { useNavigate } from "react-router";
 
 export default function Characters() {
     const [personagens, setPersonagens] = useState([])
+    const navigate = useNavigate();
 
     useEffect(() => {
         async function assincrona() {
@@ -35,7 +36,7 @@ export default function Characters() {
             <Elements>
                 {
                     personagens.map(((e) => (
-                        <Card h2={e.name} key={e.id}>
+                        <Card h2={e.name} key={e.id} onClick={() => navigate(`/characters/${e.id}`)}>
                             <img src={e.image} alt="imagem de um episódio de rick and morty" />
                         </Card>
                     )))

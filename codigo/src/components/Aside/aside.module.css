@@ -27,7 +27,7 @@
 }
 
 .links a{
-    color: #7C3AED;
+    color: var(--roxo-texto);
     font-weight: 700;
     text-decoration: none;
     font-size: 1.3em;
@@ -36,4 +36,20 @@
 
 .links > a:hover{
     color: rgb(129, 5, 129);
+}
+
+@media (min-width: 350px) and (max-width: 550px){
+    .aside{
+        position: static;
+        height: fit-content;
+        width: 100%;
+    }
+
+    .p{
+        display: none;
+    }
+
+    .links{
+        text-align: center;
+    }
 }
