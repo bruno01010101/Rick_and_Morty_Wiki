@@ -31,7 +31,7 @@ export default function Characters() {
 
     return (
         <div className={styles.characters}>
-            <Search placeholder='Pesquise pelo nome do personagem que você deseja encontrar' />
+            <Search placeholder='Pesquise pelo id do personagem que você deseja encontrar' type='characters' />
 
             <Elements>
                 {

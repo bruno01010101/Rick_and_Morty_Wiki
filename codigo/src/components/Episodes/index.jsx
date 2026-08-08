@@ -31,7 +31,7 @@ export default function Episodes() {
 
     return (
         <div className={styles.episodios}>
-            <Search placeholder='Pesquise pelo título do episódio que você deseja encontrar' />
+            <Search placeholder='Pesquise pelo título do episódio que você deseja encontrar' type='episode' />
             <Elements>
                 {
                     episodios.map(((e) => (

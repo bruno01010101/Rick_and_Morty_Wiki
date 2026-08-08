@@ -13,5 +13,20 @@
 @media (min-width: 300px) and (max-width: 650px) {
     .main{
         width: 70%;
+        font-size: small;
+        align-self: flex-end;
+    }
+}
+
+@media (min-width: 651px) and (max-width: 850px) {
+    .main{
+        width: 100%;
+        align-self: flex-start;
+    }
+}
+
+@media (min-width: 851px) and (max-width: 1372px) {
+    .main{
+        width: 360px;
     }
 }
