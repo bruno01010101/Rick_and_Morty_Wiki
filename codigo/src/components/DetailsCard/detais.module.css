@@ -10,7 +10,7 @@
     width: 37%;
 }
 
-@media (min-width: 300px) and (max-width: 550px) {
+@media (min-width: 300px) and (max-width: 650px) {
     .main{
         width: 70%;
     }

@@ -6,9 +6,17 @@
     background-color: var(--cor-header);
 }
 
-@media (min-width: 350px) and (max-width: 550px){
+@media (min-width: 350px) and (max-width: 650px){
     .elements{
         grid-template-columns: 1fr 1fr;
         grid-auto-rows: 350px;
+    }
+}
+
+@media (min-width: 651px) and (max-width: 1370px){
+    .elements{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-rows: 290px;
+        max-width: 800px;
     }
 }

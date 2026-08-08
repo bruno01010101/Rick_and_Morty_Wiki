@@ -38,7 +38,7 @@
     color: rgb(129, 5, 129);
 }
 
-@media (min-width: 350px) and (max-width: 550px){
+@media (min-width: 350px) and (max-width: 650px){
     .aside{
         position: static;
         height: fit-content;
@@ -51,5 +51,11 @@
 
     .links{
         text-align: center;
+    }
+}
+
+@media (min-width: 651px) and (max-width: 1370px){
+    .aside{
+        width: 350px;
     }
 }
