@@ -1,0 +1,17 @@
+.main{
+    padding: 30px 30px 50px 30px;
+    border-radius: 5px;
+    gap: 60px;
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-header);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 37%;
+}
+
+@media (min-width: 300px) and (max-width: 550px) {
+    .main{
+        width: 70%;
+    }
+}

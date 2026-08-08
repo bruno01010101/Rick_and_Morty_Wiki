@@ -1,7 +1,8 @@
 import styles from './detailspagecharacter.module.css';
 import axios from 'axios'
 import { useEffect, useState } from "react";
-import { useParams } from 'react-router';;
+import { useParams } from 'react-router';
+import DetailsCard from '../../components/DetailsCard';
 
 export default function DetailsPageCharacter() {
 
@@ -26,7 +27,7 @@ export default function DetailsPageCharacter() {
 
     if (personagem) {
         return (
-            <div className={styles.main}>
+            <DetailsCard>
                 <img src={personagem.image} alt="" className={styles.img} />
                 <div className={styles.informacoes}>
                     <p>
@@ -37,7 +38,7 @@ export default function DetailsPageCharacter() {
                     <p><span className={styles.destaque}>Status: </span> {personagem.status} </p>
                     <p><span className={styles.destaque}>Planeta de origem: </span>{personagem.origin.name}</p>
                 </div>
-            </div>
+            </DetailsCard>
         )
     }
 }
