@@ -13,8 +13,15 @@ export default function Search({placeholder, type}) {
         navigate(url)
     }
 
+    function foco(e){
+        if(e.key === "Enter"){
+            submit();
+            console.log(texto)
+        }
+    }
+
     return(
-        <div className={styles.search} onChange={(v) => setTexto(v.target.value)}>
+        <div className={styles.search} onChange={(v) => setTexto(v.target.value)} onKeyDown={foco}>
             <FaSearch onClick={() => submit()} />
             <input type="text" placeholder={placeholder} />
         </div>
