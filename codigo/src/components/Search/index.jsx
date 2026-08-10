@@ -9,14 +9,12 @@ export default function Search({placeholder, type}) {
 
     const submit = async () => {
         const url = `/${type}/${texto}`
-        console.log(url)
         navigate(url)
     }
 
     function foco(e){
         if(e.key === "Enter"){
             submit();
-            console.log(texto)
         }
     }
 

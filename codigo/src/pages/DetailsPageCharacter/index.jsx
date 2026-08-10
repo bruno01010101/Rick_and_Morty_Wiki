@@ -1,12 +1,13 @@
 import styles from './detailspagecharacter.module.css';
 import axios from 'axios'
 import { useEffect, useState } from "react";
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import DetailsCard from '../../components/DetailsCard';
 
 export default function DetailsPageCharacter() {
 
     const [personagem, setPersonagem] = useState();
+    const navigate = useNavigate()
 
     const { id } = useParams()
 
@@ -19,6 +20,7 @@ export default function DetailsPageCharacter() {
             }
             catch (erro) {
                 console.error(erro);
+                navigate('/404')
             }
         }
 

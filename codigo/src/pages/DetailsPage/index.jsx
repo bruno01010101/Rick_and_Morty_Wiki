@@ -1,13 +1,14 @@
 import styles from './detailspage.module.css';
 import axios from 'axios'
 import { useEffect, useState } from "react";
-import { useParams } from 'react-router';
+import { useParams, useNavigate } from 'react-router';
 import img from "../../assets/capa.jpg";
 import DetailsCard from '../../components/DetailsCard';
 
 export default function DetailsPage() {
 
     const [episodio, setEpisodio] = useState({});
+    const navigate = useNavigate()
 
     const { name } = useParams()
 
@@ -26,6 +27,7 @@ export default function DetailsPage() {
             }
             catch (erro) {
                 console.error(erro);
+                navigate('/404')
             }
         }
 
