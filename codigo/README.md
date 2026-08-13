@@ -8,6 +8,10 @@ Currently, two official plugins are available:
 
 ![Preview do projeto](image.png)
 
+## Deploy
+
+O deploy foi feito utilizando o vercel, com o código hospedado no github. link do projeto: https://rick-and-morty-wiki-three-ruby.vercel.app/
+
 ## Funcionalidades
 
 - Listagem de todos os episódios de rick and morty
